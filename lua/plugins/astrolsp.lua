@@ -49,7 +49,17 @@ return {
      		capabilities = { 
         		offsetEncoding = "utf-8",
       		},
-   	},
+   		},
+		-- Pyright config
+		pyright = {
+        	settings = {
+          		python = {
+            		analysis = {
+              			autoImportCompletions = true,
+            		},
+          		},
+        	},
+      	},
     },
     -- customize how language servers are attached
     handlers = {
