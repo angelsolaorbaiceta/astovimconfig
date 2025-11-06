@@ -45,12 +45,6 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-
-			-- Pyright config
-			pyright = {},
-
-			-- Ruff LSP (built into ruff binary)
-			ruff = {},
     },
 
     -- customize how language servers are attached
