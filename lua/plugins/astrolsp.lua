@@ -14,13 +14,15 @@ return {
       inlay_hints = false, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
+
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
       format_on_save = {
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
-          -- "go",
+          "go",
+		  "python",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -35,32 +37,18 @@ return {
       --   return true
       -- end
     },
+
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
     },
-    -- customize language server configuration options passed to `lspconfig`
+    
+	-- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-	-- the key is the server name to configure
-	-- the value the configuration table
-	-- SEE: https://docs.astronvim.com/recipes/advanced_lsp/
-    	clangd = { 
-     		capabilities = { 
-        		offsetEncoding = "utf-8",
-      		},
-   		},
-		-- Pyright config
-		pyright = {
-        	settings = {
-          		python = {
-            		analysis = {
-              			autoImportCompletions = true,
-            		},
-          		},
-        	},
-      	},
+      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
     },
+
     -- customize how language servers are attached
     handlers = {
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
@@ -70,6 +58,7 @@ return {
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
     },
+
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
       -- first key is the `augroup` to add the auto commands to (:h augroup)
@@ -92,6 +81,7 @@ return {
         },
       },
     },
+
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
@@ -110,6 +100,7 @@ return {
         },
       },
     },
+
     -- A custom `on_attach` function to be run after the default `on_attach` function
     -- takes two parameters `client` and `bufnr`  (`:h lspconfig-setup`)
     on_attach = function(client, bufnr)
