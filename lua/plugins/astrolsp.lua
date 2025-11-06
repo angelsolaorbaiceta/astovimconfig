@@ -47,27 +47,10 @@ return {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
 
 			-- Pyright config
-			pyright = {
-				settings = {
-					python = {
-						analysis = {
-							autoImportCompletions = true,
-						},
-					},
-				},
-			},
+			pyright = {},
 
 			-- Ruff LSP (built into ruff binary)
-			ruff = {
-				init_options = {
-					settings = {
-						-- Add any Ruff settings here
-						lint = {
-							select = { "E", "F", "I", "B", "UP" },
-						},
-					},
-				},
-			},
+			ruff = {},
     },
 
     -- customize how language servers are attached
