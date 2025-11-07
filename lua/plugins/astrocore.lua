@@ -46,6 +46,7 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
+        scrolloff = 10, -- keep at least 10 lines visible below/above cursor
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
