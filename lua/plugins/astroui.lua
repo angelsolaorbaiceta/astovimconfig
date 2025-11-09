@@ -9,7 +9,8 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "astrodark",
+    -- colorscheme = "astrodark",
+    colorscheme = "catppuccin",
 
     -- Configure the statusline
     status = {
