@@ -9,18 +9,17 @@ return {
     opts = {
       -- Make sure to use the names found in `:Mason`
       ensure_installed = {
-        -- Python
-        "pyright",           -- Python LSP (language server)
-        "ruff",              -- Python linter + formatter
-        "debugpy",           -- Python debugger
-        
         -- install language servers
+        "pyright",    -- Python LSP (language server)
+        "ruff",       -- Python linter + formatter
+        "gopls",      -- Go LSP
         "lua-language-server",
 
         -- install formatters
         "stylua",
 
         -- install debuggers
+        "debugpy",           -- Python debugger
 
         -- install any other package
         "tree-sitter-cli",
