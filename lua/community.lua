@@ -8,5 +8,8 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.bars-and-lines.dropbar-nvim" },
+  { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.pack.markdown" },
+  { import = "astrocommunity.test.neotest" },
   -- import/override with your plugins folder
 }
