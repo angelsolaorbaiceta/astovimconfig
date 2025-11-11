@@ -2,7 +2,7 @@ return {
   "nvim-neotest/neotest",
   dependencies = {
     "nvim-neotest/neotest-python",
-    "nvim-neotest/neotest-golang",
+    "fredrikaverpil/neotest-golang",
   },
   opts = function(_, opts)
     if not opts.adapters then opts.adapters = {} end
