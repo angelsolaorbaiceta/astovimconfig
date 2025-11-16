@@ -20,6 +20,7 @@ return {
 
         -- install debuggers
         "debugpy",           -- Python debugger
+        "delve",             -- Go debugger
 
         -- install any other package
         "tree-sitter-cli",

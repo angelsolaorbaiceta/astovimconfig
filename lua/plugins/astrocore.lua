@@ -76,6 +76,38 @@ return {
           desc = "Close buffer from tabline",
         },
 
+        -- Test mappings (Neotest)
+        ["<Leader>t"] = { desc = "Tests" },
+        ["<Leader>tt"] = { function() require("neotest").run.run() end, desc = "Run nearest test" },
+        ["<Leader>tf"] = { function() require("neotest").run.run(vim.fn.expand("%")) end, desc = "Run test file" },
+        ["<Leader>ta"] = { function() require("neotest").run.run(vim.fn.getcwd()) end, desc = "Run all tests" },
+        ["<Leader>ts"] = { function() require("neotest").summary.toggle() end, desc = "Toggle test summary" },
+        ["<Leader>to"] = { function() require("neotest").output.open({ enter = true }) end, desc = "Open test output" },
+        ["<Leader>tO"] = { function() require("neotest").output_panel.toggle() end, desc = "Toggle test output panel" },
+        ["<Leader>tS"] = { function() require("neotest").run.stop() end, desc = "Stop nearest test" },
+        ["<Leader>tw"] = { function() require("neotest").watch.toggle() end, desc = "Toggle test watch" },
+
+        -- Debug mappings (DAP)
+        ["<Leader>d"] = { desc = "Debugger" },
+        ["<Leader>db"] = { function() require("dap").toggle_breakpoint() end, desc = "Toggle breakpoint" },
+        ["<Leader>dB"] = { function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, desc = "Conditional breakpoint" },
+        ["<Leader>dc"] = { function() require("dap").continue() end, desc = "Continue" },
+        ["<Leader>di"] = { function() require("dap").step_into() end, desc = "Step into" },
+        ["<Leader>do"] = { function() require("dap").step_over() end, desc = "Step over" },
+        ["<Leader>dO"] = { function() require("dap").step_out() end, desc = "Step out" },
+        ["<Leader>dq"] = { function() require("dap").terminate() end, desc = "Terminate" },
+        ["<Leader>dr"] = { function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
+        ["<Leader>du"] = { function() require("dapui").toggle() end, desc = "Toggle debugger UI" },
+        ["<Leader>dh"] = { function() require("dap.ui.widgets").hover() end, desc = "Hover" },
+
+        -- Debug test mappings (Neotest + DAP)
+        ["<Leader>td"] = { function() require("neotest").run.run({ strategy = "dap" }) end, desc = "Debug nearest test" },
+        ["<Leader>tD"] = { function() require("neotest").run.run({ vim.fn.expand("%"), strategy = "dap" }) end, desc = "Debug test file" },
+
+        -- Go-specific debug mappings
+        ["<Leader>dgt"] = { function() require("dap-go").debug_test() end, desc = "Debug Go test" },
+        ["<Leader>dgl"] = { function() require("dap-go").debug_last_test() end, desc = "Debug last Go test" },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
