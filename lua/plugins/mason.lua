@@ -13,6 +13,7 @@ return {
         "pyright",    -- Python LSP (language server)
         "ruff",       -- Python linter + formatter
         "gopls",      -- Go LSP
+        "clangd",     -- C LSP
         "lua-language-server",
 
         -- install formatters
