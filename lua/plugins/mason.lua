@@ -19,7 +19,8 @@ return {
         "stylua",
 
         -- install debuggers
-        "debugpy",           -- Python debugger
+        "debugpy",
+        "delve",
 
         -- install any other package
         "tree-sitter-cli",
