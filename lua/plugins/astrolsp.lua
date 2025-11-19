@@ -21,8 +21,8 @@ return {
       format_on_save = {
         enabled = true, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
-					"go",
-					"python",
+          "go",
+          "python",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
@@ -41,12 +41,32 @@ return {
     -- enable servers that you already have installed without mason
     servers = {},
 
-	-- customize language server configuration options passed to `lspconfig`
+    -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-		    -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
-			pyright = { },
-			ruff = { },
+      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      pyright = {
+        settings = {
+          pyright = {
+            -- Using Ruff's import organizer
+            disableOrganizeImports = true,
+          },
+          python = {
+            analysis = {
+              -- Ignore all files for analysis to exclusively use Ruff for linting
+              ignore = { "*" },
+            },
+          },
+        },
+      },
+      ruff = {
+        init_options = {
+          settings = {
+            lineLength = 90,
+            organizeImports = true,
+          },
+        },
+      },
     },
 
     -- customize how language servers are attached
