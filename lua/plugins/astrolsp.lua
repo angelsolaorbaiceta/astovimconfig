@@ -39,7 +39,10 @@ return {
     },
 
     -- enable servers that you already have installed without mason
-    servers = {},
+    servers = {
+      "pyright",
+      "ruff",
+    },
 
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -57,10 +60,7 @@ return {
             disableOrganizeImports = true,
           },
           python = {
-            analysis = {
-              -- Ignore all files for analysis to exclusively use Ruff for linting
-              ignore = { "*" },
-            },
+            analysis = {},
           },
         },
       },
