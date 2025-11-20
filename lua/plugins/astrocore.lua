@@ -76,6 +76,15 @@ return {
           desc = "Close buffer from tabline",
         },
 
+        -- Copy relative path
+        ["<Leader>fp"] = {
+          function()
+            vim.fn.setreg("+", vim.fn.expand("%"))
+            vim.notify("Copied relative path: " .. vim.fn.expand("%"))
+          end,
+          desc = "Copy file relative path"
+        },
+
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         -- ["<Leader>b"] = { desc = "Buffers" },
