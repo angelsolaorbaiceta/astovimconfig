@@ -10,11 +10,12 @@ return {
       -- Make sure to use the names found in `:Mason`
       ensure_installed = {
         -- install language servers
-        "pyright",    -- Python LSP (language server)
-        "ruff",       -- Python linter + formatter
-        "gopls",      -- Go LSP
-        "clangd",     -- C LSP
-        "lua-language-server",
+        "pyright", -- Python LSP (language server)
+        "ruff", -- Python linter + formatter
+        "gopls", -- Go LSP
+        "clangd", -- C LSP
+        "lua-language-server", -- Lua LSP
+        "buf", -- Protocol buffers LSP
 
         -- install formatters
         "stylua",

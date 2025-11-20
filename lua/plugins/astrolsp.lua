@@ -44,7 +44,12 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      buf = {},
+
+      clangd = {
+        capabilities = { offsetEncoding = "utf-8" },
+      },
+
       pyright = {
         settings = {
           pyright = {
@@ -59,6 +64,7 @@ return {
           },
         },
       },
+
       ruff = {
         init_options = {
           settings = {
